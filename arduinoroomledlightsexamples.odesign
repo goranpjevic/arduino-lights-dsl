@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="arduinoroomledlightsexamples" version="12.0.0.2017041100">
+  <ownedViewpoints name="arduinoroomledlights" modelFileExtension="arduinoroomledlights">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="arduinoroomledlights diagram" domainClass="arduinoRoomLedLights::ProgramClasses" enablePopupBars="true">
+      <metamodel href="http://www.example.org/arduinoRoomLedLights#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="procedureNode" domainClass="arduinoRoomLedLights::Procedure">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="setupLEDNode" domainClass="arduinoRoomLedLights::setupLED">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="DefineNode" domainClass="arduinoRoomLedLights::Define">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="LoopNode" domainClass="arduinoRoomLedLights::Loop">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="EndNode" domainClass="arduinoRoomLedLights::End">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RoomLightNode" domainClass="arduinoRoomLedLights::RoomLight">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ButtonNode" domainClass="arduinoRoomLedLights::Button">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="TemperatureSensorNode" domainClass="arduinoRoomLedLights::TemperatureSensor">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="definesRoomLight" sourceMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='DefineNode']" targetMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='RoomLightNode']" targetFinderExpression="[lights/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="definesButton" sourceMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='DefineNode']" targetMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='ButtonNode']" targetFinderExpression="[buttons/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="definesTemperatureSensor" sourceMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='DefineNode']" targetMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='TemperatureSensorNode']" targetFinderExpression="[temperaturesensor/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="buttonControlsLight" sourceMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='ButtonNode']" targetMapping="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='RoomLightNode']" targetFinderExpression="[lights/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="section">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createRoomLigth" nodeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='RoomLightNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduinoRoomLedLights::RoomLight" referenceName="lights"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createButton" nodeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='ButtonNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduinoRoomLedLights::Button" referenceName="buttons"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createTemperatureSensor" nodeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@nodeMappings[name='TemperatureSensorNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="arduinoRoomLedLights::TemperatureSensor" referenceName="temperaturesensor"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="define_light" edgeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@edgeMappings[name='definesRoomLight']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="define_button" edgeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@edgeMappings[name='definesButton']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="define_temperaturesensor" edgeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@edgeMappings[name='definesTemperatureSensor']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="button_control_light" edgeMappings="//@ownedViewpoints[name='arduinoroomledlights']/@ownedRepresentations[name='arduinoroomledlights%20diagram']/@defaultLayer/@edgeMappings[name='buttonControlsLight']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation/>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="arduinoroomledlightsexamples.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

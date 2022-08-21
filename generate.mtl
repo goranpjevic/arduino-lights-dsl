@@ -1,0 +1,111 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/arduinoRoomLedLights')]
+
+[template public generateElement(programClass : ProgramClasses)]
+[comment @main/]
+[file('arduinoroomledlights.ino',false,'UTF-8')]
+[comment procedure/]
+int BA;
+int celsius = 0;
+bool tempOff = true;
+
+[comment setup/]
+
+const int delayTime = [programClass.setup.delay/];
+
+[comment define/]
+
+[for (cl:RoomLight | programClass.define.lights) separator ('\n')]
+[cl.name/] = [cl.pinNumber/];
+LED[cl.name/]on = false;
+[/for]
+[for (bt:Button | programClass.define.buttons) separator ('\n')]
+[bt.name/] = [bt.pinNumber/];
+[/for]
+void setup()
+{
+  Serial.begin(9600);
+[for (cl:RoomLight | programClass.define.lights) separator ('\n')]
+pinMode([cl.name/], OUTPUT);
+[/for]
+[for (bt:Button | programClass.define.buttons) separator ('\n')]
+pinMode([bt.name/], INPUT_PULLUP);
+[/for]
+}
+
+[comment loop/]
+
+void loop()
+
+{
+[for (bt:Button | programClass.define.buttons) separator ('\n')]
+[if (bt.buttonControl = 0)]
+[for (cl:RoomLight | bt.lightsToControl) separator ('\n')]
+LED[cl.name/]on=toggleOneLight([bt.name/],[cl.name/],LED[cl.name/]on);
+[/for]
+[/if]
+[if (bt.buttonControl <> 0)]
+if(digitalRead([bt.name/]) == HIGH){
+      turnOnAllLights();
+  } else {
+    turnOffAllLights();
+  }
+[/if]
+[/for]
+
+[if (not programClass.define.temperaturesensor.oclIsUndefined())]
+[let tempSensor : TemperatureSensor = programClass.define.temperaturesensor]
+   celsius = map(((analogRead(A0) - 20) * 3.04), 0, 1023, -40, 125);
+
+ Serial.print(celsius);
+ Serial.println(" °C");
+  if (celsius > [tempSensor.celsiusToToggleLights/]){
+    if(tempOff){
+        turnOnAllLights();
+        tempOff = false;
+    }
+  } else {
+    if(!tempOff) {
+        turnOffAllLights();
+        tempOff = true;
+    }
+  }
+[/let]
+[/if]
+
+
+ delay(delayTime); // delay for 'delayTime' milliseconds
+}
+
+
+void turnOnAllLights(){
+[for (cl:RoomLight | programClass.define.lights) separator ('\n')]
+ digitalWrite([cl.name/],HIGH);
+[/for]
+}
+
+void turnOffAllLights(){
+[for (cl:RoomLight | programClass.define.lights) separator ('\n')]
+ digitalWrite([cl.name/],LOW);
+[/for]
+}
+
+bool toggleOneLight(int buttonPin,int LEDpin,bool LEDon){
+  if(digitalRead(buttonPin)==LOW){
+    if (!LEDon){
+        digitalWrite(LEDpin,HIGH);
+      return !LEDon;
+    } else {
+      digitalWrite(LEDpin,LOW);
+      return !LEDon;
+    }
+  }
+  return LEDon;
+}
+
+[comment end/]
+
+[/file]
+[/template]
+
+

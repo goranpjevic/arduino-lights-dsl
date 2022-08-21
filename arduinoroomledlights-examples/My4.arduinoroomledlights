@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduinoRoomLedLights:ProgramClasses xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:arduinoRoomLedLights="http://www.example.org/arduinoRoomLedLights">
+  <procedure name="1"/>
+  <setup delay="400" name="setup"/>
+  <define name="define">
+    <lights name="red"/>
+    <lights name="green"/>
+    <lights name="blue"/>
+    <lights name="cyan"/>
+    <lights name="rgb"/>
+    <buttons name="red" lightsToControl="//@define/@lights.0 //@define/@lights.4"/>
+    <buttons name="green" lightsToControl="//@define/@lights.1 //@define/@lights.4"/>
+    <buttons name="blue" lightsToControl="//@define/@lights.2 //@define/@lights.4"/>
+    <buttons name="turnOnAll" lightsToControl="//@define/@lights.2 //@define/@lights.3 //@define/@lights.1 //@define/@lights.0 //@define/@lights.4"/>
+    <buttons name="turnOffAll" lightsToControl="//@define/@lights.2 //@define/@lights.3 //@define/@lights.1 //@define/@lights.0 //@define/@lights.4"/>
+    <temperaturesensor celsiusToToggleLights="30" name="temperatureSensor"/>
+  </define>
+  <loop name="loop"/>
+  <end name="end"/>
+</arduinoRoomLedLights:ProgramClasses>

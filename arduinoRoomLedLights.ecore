@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arduinoRoomLedLights" nsURI="http://www.example.org/arduinoRoomLedLights"
+    nsPrefix="arduinoRoomLedLights">
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramClasses">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="procedure" eType="#//Procedure"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setup" eType="#//setupLED"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="define" eType="#//Define"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loop" eType="#//Loop" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lights" upperBound="-1"
+        eType="#//RoomLight" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//End" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="temperaturesensor" eType="#//TemperatureSensor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttons" upperBound="-1"
+        eType="#//Button" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Procedure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="setupLED">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="LightsProgramTypeOld" instanceTypeName="newDataType1"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoomLight">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Define">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lights" upperBound="-1"
+        eType="#//RoomLight" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttons" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="temperaturesensor" eType="#//TemperatureSensor"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop"/>
+  <eClassifiers xsi:type="ecore:EClass" name="End"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="LightsProgramType">
+    <eLiterals name="oneLED"/>
+    <eLiterals name="oneToAllLED" value="1"/>
+    <eLiterals name="alternatelyLED" value="2"/>
+    <eLiterals name="allLED" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ButtonOld" instanceTypeName="newDataType3"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Button">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buttonControl" eType="#//LightsProgramType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lightsToControl" upperBound="-1"
+        eType="#//RoomLight"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemperatureSensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="celsiusToToggleLights"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ButtonType">
+    <eLiterals name="TurnOnAllLEDs"/>
+    <eLiterals name="TurnOffAllLEDs" value="1"/>
+    <eLiterals name="ToggleOneLED" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>
