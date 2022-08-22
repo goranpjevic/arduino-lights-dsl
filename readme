@@ -1,3 +1,19 @@
                                arduino-lights-dsl
 
 a domain specific language example for changing lights using arduino.
+
+project structure:
+
+'arduino-examples/': working arduino code examples
+
+'arduinoroomledlights-examples/': example ecore metamodel programs
+
+'arduinoRoomLedLights.ecore': ecore metamodel classes
+
+'arduinoroomledlights.ino': generated arduino code example
+
+'arduinoroomledlightsexamples.odesign': specification for the graphical
+representation of the ecore metamodel programs
+
+'generate.mtl': template for generating arduino code from the ecore metamodel
+programs
