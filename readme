@@ -8,12 +8,12 @@ project structure:
 
 'arduinoroomledlights-ecore-examples/': example ecore metamodel programs
 
+'arduinoroomledlights-generate.mtl': template for generating arduino code from
+the ecore metamodel programs
+
 'arduinoRoomLedLights.ecore': ecore metamodel classes
 
 'arduinoroomledlights.ino': generated arduino code example
 
 'arduinoroomledlights.odesign': specification for the graphical representation
 of the ecore metamodel programs
-
-'arduinoroomledlights-generate.mtl': template for generating arduino code from
-the ecore metamodel programs
